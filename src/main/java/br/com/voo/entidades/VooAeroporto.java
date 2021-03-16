@@ -10,6 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.sun.istack.NotNull;
 
 import br.com.voo.entidades.pk.VooAeroportoPK;
@@ -31,6 +32,7 @@ public class VooAeroporto implements Serializable {
 	@ManyToOne
     @MapsId("vooId")
     @JoinColumn(name = "idVoo")
+	@JsonBackReference
 	private Voo voo;
 
     @ManyToOne

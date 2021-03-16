@@ -53,11 +53,8 @@ public class Aeroporto implements Serializable{
 	private Double longetude;
 	
 	@NonNull
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idCidade", nullable=false, insertable=false, updatable=false)
 	private Cidade cidade;
 	
-	@JsonBackReference
-	@OneToMany(mappedBy = "aeroporto")
-    private List<VooAeroporto> voosOrigemDestino;
 }

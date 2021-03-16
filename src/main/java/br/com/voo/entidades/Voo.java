@@ -1,10 +1,8 @@
 package br.com.voo.entidades;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -21,9 +19,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.lang.NonNull;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.sun.istack.NotNull;
 
 import lombok.AllArgsConstructor;
@@ -59,11 +55,11 @@ public class Voo implements Serializable{
 	
 	@NonNull
 	@Column(name = "hora_partida")
-	private Date horarioPartida;
+	private LocalDateTime horarioPartida;
 	
 	@NonNull
 	@Column(name = "hora_chegada")
-	private Date horarioChegada;
+	private LocalDateTime horarioChegada;
 	
 	@NonNull
 	@OneToOne(cascade = CascadeType.ALL)
@@ -83,8 +79,7 @@ public class Voo implements Serializable{
 	@JoinColumn(name = "idStatusVoo", nullable=false, insertable=false, updatable=false)
 	private StatusVoo statusVoo;
 	
-	@JsonBackReference
-	@OneToMany(mappedBy = "voo")
+	@OneToMany(mappedBy = "voo", fetch = FetchType.EAGER)
 	private List<VooAeroporto> aeroportosOrigemDestino;
 	
 }
