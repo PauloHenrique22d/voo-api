@@ -37,8 +37,6 @@ public class Voo implements Serializable{
 	@Id
 	@NotNull
 	@Column(name = "id_voo")
-	@GeneratedValue(generator = "increment")
-	@GenericGenerator(name="increment", strategy="increment")
 	private Long idVoo;
 	
 	@NonNull
@@ -61,22 +59,20 @@ public class Voo implements Serializable{
 	@Column(name = "hora_chegada")
 	private LocalDateTime horarioChegada;
 	
-	@NonNull
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "idAviao", nullable=false, insertable=false, updatable=false)
+	@JoinColumn(name = "idAviao")
 	private Aviao aviao;
 	
-	@NonNull
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "idPiloto", nullable=false, insertable=false, updatable=false)
+	@JoinColumn(name = "idPiloto")
 	private Piloto piloto;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "idTipoVoo", nullable=false, insertable=false, updatable=false)
+	@JoinColumn(name = "idTipoVoo")
 	private TipoVoo tipoVoo;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "idStatusVoo", nullable=false, insertable=false, updatable=false)
+	@JoinColumn(name = "idStatusVoo")
 	private StatusVoo statusVoo;
 	
 	@OneToMany(mappedBy = "voo", fetch = FetchType.EAGER)

@@ -28,8 +28,6 @@ public class Aviao implements Serializable{
 	@Id
 	@NotNull
 	@Column(name = "id_aviao")
-	@GeneratedValue(generator = "increment")
-	@GenericGenerator(name="increment", strategy="increment")
 	private Long idAviao;
 
 }

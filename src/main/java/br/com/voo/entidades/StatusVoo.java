@@ -28,8 +28,6 @@ public class StatusVoo implements Serializable{
 	@Id
 	@NotNull
 	@Column(name = "id_status_voo")
-	@GeneratedValue(generator = "increment")
-	@GenericGenerator(name="increment", strategy="increment")
 	private Long idStatusVoo;
 	
 	@Column(name = "stat_voo")

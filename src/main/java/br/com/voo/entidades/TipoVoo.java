@@ -27,8 +27,6 @@ public class TipoVoo implements Serializable{
 	@Id
 	@NotNull
 	@Column(name = "id_tipo_voo")
-	@GeneratedValue(generator = "increment")
-	@GenericGenerator(name="increment", strategy="increment")
 	private Long idTipoVoo;
 	
 	@NotNull

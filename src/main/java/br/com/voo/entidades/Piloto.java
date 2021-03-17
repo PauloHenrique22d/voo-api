@@ -34,8 +34,6 @@ public class Piloto implements Serializable{
 	@Id
 	@NotNull
 	@Column(name = "id_piloto")
-	@GeneratedValue(generator = "increment")
-	@GenericGenerator(name="increment", strategy="increment")
 	private Long idPiloto;
 	
 	@Column(name = "nome")

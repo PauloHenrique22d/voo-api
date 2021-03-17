@@ -32,8 +32,6 @@ public class Cidade implements Serializable{
 	@Id
 	@NotNull
 	@Column(name = "id_cidade")
-	@GeneratedValue(generator = "increment")
-	@GenericGenerator(name="increment", strategy="increment")
 	private Long idCidade;
 	
 	@Column(name = "nome")

@@ -36,8 +36,6 @@ public class Aeroporto implements Serializable{
 	@Id
 	@NotNull
 	@Column(name = "id_aeroporto")
-	@GeneratedValue(generator = "increment")
-	@GenericGenerator(name="increment", strategy="increment")
 	private Long idAeroporto;
 	
 	@Column(name = "nome_aeroporto")
